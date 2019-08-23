@@ -4,6 +4,8 @@
 
 const int maxsize = 100;
 
+using namespace std;
+
 int main()
 {
     bool generation[maxsize][maxsize], generation_old[maxsize][maxsize], end = false;
