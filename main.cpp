@@ -1,10 +1,11 @@
-#include "functions.h"
+#include "func.h"
 #include <iostream>
+#include <unistd.h>
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    int x, y, z, lc, life = 0, size = 9;
+    int x, y, lc, life = 0, size = 9;
     bool end = false;
     printf("Использовать шаблон или новую конфигурацию? (0/1)\n");
     scanf("%i",&lc);
@@ -20,10 +21,10 @@ int main()
                     break;
                 } else {
                     printf("Координаты клетки должны быть от 0 до 9!\n");
-                    Sleep(100);
+                    sleep(100);
                 }
             }
-            Sleep(100);
+            sleep(100);
         }
     } else {
         system("cls");
@@ -149,7 +150,7 @@ int main()
         }
         printf("\n");
     }
-    Sleep(1500);
+    sleep(1500);
     while(!end) {
         lc = 0;
         system("cls");
@@ -195,7 +196,7 @@ int main()
             printf("\nСостояние клеток не изменяется.");
         }
         
-        Sleep(900);
+        sleep(900);
     }
     return 0;
 }
