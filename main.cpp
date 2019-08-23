@@ -30,8 +30,6 @@ int main()
             }
         }
     } else {
-        for(int i = 0; i < 50; i++)
-                cout<<endl;
 
         while(!end) {
             cout<<"Выберите шаблон:\n\n1)Устойчивая фигура: \"Пасека\"\n2)Д";
@@ -142,8 +140,6 @@ int main()
                 break; 
             }
             }
-            for(int i = 0; i < 50; i++)
-                cout<<endl;
         }
     }
     end = false;
@@ -163,9 +159,6 @@ int main()
             gm[i] = generation[i];
         }
         lc = 0;
-
-        for(int i = 0; i < 50; i++)
-                cout<<endl;
 
         for(int l = 0; l < size; l++)
             for(int i = 0; i < size; i++)
