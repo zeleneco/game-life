@@ -25,12 +25,14 @@ int main()
                     generation[x][y] = true;
                     break;
                 } else {
-                    printf("Координаты клетки должны быть от 0 до 9!\n");
+                    cout<<"Координаты клетки должны быть от 0 до 9!"<<endl;
                 }
             }
         }
     } else {
-        system("clear");
+        for(int i = 0; i < 50; i++)
+                cout<<endl;
+
         while(!end) {
             cout<<"Выберите шаблон:\n\n1)Устойчивая фигура: \"Пасека\"\n2)Д";
             cout<<"олгожитель: \"R-пентамино\"\n3)Периодическая фигура: \"Г";
@@ -140,7 +142,8 @@ int main()
                 break; 
             }
             }
-            system("clear");
+            for(int i = 0; i < 50; i++)
+                cout<<endl;
         }
     }
     end = false;
@@ -160,7 +163,10 @@ int main()
             gm[i] = generation[i];
         }
         lc = 0;
-        system("clear");
+
+        for(int i = 0; i < 50; i++)
+                cout<<endl;
+
         for(int l = 0; l < size; l++)
             for(int i = 0; i < size; i++)
                 generation_old[i][l] = generation[i][l];
