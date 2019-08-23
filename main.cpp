@@ -2,11 +2,14 @@
 #include <iostream>
 #include <unistd.h>
 
+const int maxsize = 100;
+
 int main()
 {
+    bool generation[maxsize][maxsize], generation_old[maxsize][maxsize], end = false;
+    int countgen[maxsize][maxsize], x, y, lc, life = 0, size = 10;
+
     setlocale(LC_ALL, "Russian");
-    int x, y, lc, life = 0, size = 9;
-    bool end = false;
     printf("Использовать шаблон или новую конфигурацию? (0/1)\n");
     scanf("%i",&lc);
     if(lc) {
@@ -21,13 +24,11 @@ int main()
                     break;
                 } else {
                     printf("Координаты клетки должны быть от 0 до 9!\n");
-                    sleep(100);
                 }
             }
-            sleep(100);
         }
     } else {
-        system("cls");
+        system("clear");
         while(!end) {
             printf("Выберите шаблон:\n\n1)Устойчивая фигура: \"Пасека\"\n2)Д");
             printf("олгожитель: \"R-пентамино\"\n3)Периодическая фигура: \"Г");
@@ -137,7 +138,7 @@ int main()
                 break; 
             }
             }
-            system("cls");
+            system("clear");
         }
     }
     end = false;
@@ -150,17 +151,21 @@ int main()
         }
         printf("\n");
     }
-    sleep(1500);
+    sleep(2);
+    bool *gm[size];
     while(!end) {
+        for (int i=0; i<size; i++) {
+            gm[i] = generation[i];
+        }
         lc = 0;
-        system("cls");
+        system("clear");
         for(int l = 0; l < size; l++)
             for(int i = 0; i < size; i++)
                 generation_old[i][l] = generation[i][l];
                 
         for(int l = 0; l < size; l++)
             for(int i = 0; i < size; i++)
-                countgen[i][l] = check(i, l, size);
+                countgen[i][l] = check(i, l, gm, size);
                 
         for(int l = 0; l < size; l++) {
             for(int i = 0; i < size; i++) {
@@ -196,7 +201,7 @@ int main()
             printf("\nСостояние клеток не изменяется.");
         }
         
-        sleep(900);
+        sleep(1);
     }
     return 0;
 }
