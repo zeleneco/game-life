@@ -1,7 +1,7 @@
 #include "func.h"
 #include <iostream>
 
-int check(int first, int second, int size)
+int check(int first, int second, bool **generation,  int size)
 {
     int sum = 0, tempf, temps;
 
