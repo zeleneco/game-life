@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "func.h"
 #include <iostream>
 
 int check(int first, int second, int size)
