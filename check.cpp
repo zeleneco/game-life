@@ -1,3 +1,6 @@
+#include "functions.h"
+#include <iostream>
+
 int check(int first, int second, int size)
 {
     int sum = 0, tempf, temps;
