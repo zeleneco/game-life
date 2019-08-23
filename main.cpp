@@ -10,15 +10,15 @@ int main()
     int countgen[maxsize][maxsize], x, y, lc, life = 0, size = 10;
 
     setlocale(LC_ALL, "Russian");
-    printf("Использовать шаблон или новую конфигурацию? (0/1)\n");
-    scanf("%i",&lc);
+    cout<<"Использовать шаблон или новую конфигурацию? (0/1)"<<endl;
+    cin>>lc;
     if(lc) {
-        printf("Введите количество живых клеток: ");
-        scanf("%i",&lc);
+        cout<<"Введите количество живых клеток: ";
+        cin>>lc;
         for(int i = 0; i<lc; i++) {
-            printf("Введите координаты живых клеток от 0 до 9 (x y): \n");
+            cout<<"Введите координаты живых клеток от 0 до 9 (x y): \n";
             while(1) {
-                scanf("%i %i", &x, &y);
+                cin>>x>>y;
                 if(x>=0 && x<=9 && y>=0 && y<=9) {
                     generation[x][y] = true;
                     break;
@@ -30,10 +30,10 @@ int main()
     } else {
         system("clear");
         while(!end) {
-            printf("Выберите шаблон:\n\n1)Устойчивая фигура: \"Пасека\"\n2)Д");
-            printf("олгожитель: \"R-пентамино\"\n3)Периодическая фигура: \"Г");
-            printf("алактика Кока\"\n4)Двигающаяся фигура: \"Планер\"\n");
-            scanf("%i", &lc);
+            cout<<"Выберите шаблон:\n\n1)Устойчивая фигура: \"Пасека\"\n2)Д";
+            cout<<"олгожитель: \"R-пентамино\"\n3)Периодическая фигура: \"Г";
+            cout<<"алактика Кока\"\n4)Двигающаяся фигура: \"Планер\"\n";
+            cin>>lc;
             switch(lc) {
             case 1: {
                 size = 15;
@@ -145,11 +145,11 @@ int main()
     for(int l = 0; l < size; l++) {
         for(int i = 0; i < size; i++) {
             if(!generation[i][l])
-                printf(" .");
+                cout<<" .";
             else 
-                printf(" X"); 
+                cout<<" X"; 
         }
-        printf("\n");
+        cout<<endl;
     }
     sleep(2);
     bool *gm[size];
@@ -176,18 +176,18 @@ int main()
                 }
                 
                 if(!generation[i][l]) {
-                    printf("  ");
+                    cout<<"  ";
                 } else {
-                    printf(" X");
+                    cout<<" X";
                     life++;
                 }
             }
-            printf("\n");
+            cout<<endl;
         }
         
         if(life == 0) {
             end = true;
-            printf("\nВсе клетки погибли.");
+            cout<<endl<<"Все клетки погибли.";
         }
         else life = 0;
         
@@ -198,7 +198,7 @@ int main()
             
         if(lc == 0) {
             end = true;
-            printf("\nСостояние клеток не изменяется.");
+            cout<<endl<<"Состояние клеток не изменяется.");
         }
         
         sleep(1);
