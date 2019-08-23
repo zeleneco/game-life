@@ -10,4 +10,4 @@ check.o: check.cpp
 	g++ -c -Wall check.cpp
 
 clean:
-    rm -rf *.o life.exe
+	rm -rf *.o life.exe
